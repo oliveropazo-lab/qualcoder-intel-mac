@@ -1,0 +1,16 @@
+# Version pins for QualCoder on Intel (x86_64) Macs with Python 3.12.
+# Used with: pip install --prefer-binary -c constraints-intel-mac.txt -r requirements.txt
+
+# PyTorch stopped publishing macOS x86_64 wheels after 2.2.2.
+torch==2.2.2
+# torch 2.2.2 is built against NumPy 1.x. With NumPy 2 it reports
+# "Numpy is not available" and the AI embeddings fail.
+numpy==1.26.4
+# Latest versions that still accept NumPy 1.26.
+pandas==3.0.6
+scipy==1.17.1
+contourpy==1.3.3
+# Latest PyMuPDF with a macOS x86_64 wheel; newer releases build from source and fail.
+pymupdf==1.28.2
+# Universal2 wheel, so no Rust toolchain is needed.
+cryptography==48.0.1
